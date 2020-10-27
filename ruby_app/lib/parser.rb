@@ -41,3 +41,9 @@ def rank_page_views(hash)
   rank = hash.sort_by { |_k, v| v }
   rank.reverse
 end
+
+def prep_data(data)
+  # prepares data for both requests
+  parsed_log = read_data(data)
+  org_data(parsed_log)
+end
