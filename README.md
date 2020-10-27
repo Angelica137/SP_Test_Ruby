@@ -19,8 +19,6 @@ Write a ruby script that:
 
 ## Solution
 
-For a complete developer journal, please look at solution.md
-
 To run the script pleas enter the command
 
 ```ruby
