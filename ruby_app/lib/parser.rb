@@ -47,3 +47,10 @@ def prep_data(data)
   parsed_log = read_data(data)
   org_data(parsed_log)
 end
+
+def prep_data_result_1(data)
+  # prepares data for most viewed request
+  page_views = prep_data(data)
+  count_views = count_page_views(page_views)
+  rank_page_views(count_views)
+end

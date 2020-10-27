@@ -86,3 +86,26 @@ describe '#prep_data' do
                                   })
   end
 end
+
+describe '#prep_data_resutl_1' do
+  it 'prepares the data to run most viewed query' do
+    data = [
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.038',
+      '/contact 184.123.665.067',
+      '/contact 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/about/2 444.701.448.104'
+    ]
+    expect(prep_data_result_1(data)).to eq([
+                                             ['/home', [4]],
+                                             ['/help_page/1', [3]],
+                                             ['/contact', [2]],
+                                             ['/about/2', [1]]
+                                           ])
+  end
+end
