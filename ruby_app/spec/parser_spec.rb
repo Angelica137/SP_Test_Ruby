@@ -109,3 +109,15 @@ describe '#prep_data_resutl_1' do
                                            ])
   end
 end
+
+describe '#format_result_1' do
+  it 'takes a list of pages and their view-counts and formats it for report' do
+    list = [
+      [['/home', [4]],
+       ['/help_page/1', [3]],
+       ['/contact', [2]],
+       ['/about/2', [1]]]
+    ]
+    expect(format_result_1(list)).to eq(nil)
+  end
+end

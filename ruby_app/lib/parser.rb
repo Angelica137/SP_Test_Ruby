@@ -54,3 +54,12 @@ def prep_data_result_1(data)
   count_views = count_page_views(page_views)
   rank_page_views(count_views)
 end
+
+def format_result_1(pages)
+  # prints results for most viewed
+  pages.each do |item|
+    views = item[1].to_s.tr('[]', '')
+    puts "#{item[0]} #{views} visits"
+  end
+  nil
+end
