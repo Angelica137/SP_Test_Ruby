@@ -35,3 +35,9 @@ def count_page_views(hash)
   end
   view_count
 end
+
+def rank_page_views(hash)
+  # ranks resutls from check method
+  rank = hash.sort_by { |_k, v| v }
+  rank.reverse
+end

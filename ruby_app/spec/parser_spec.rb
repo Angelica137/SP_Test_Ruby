@@ -50,3 +50,20 @@ describe '#count_page_views' do
                                          })
   end
 end
+
+describe '#rank_page_views' do
+  it 'takes a hash of pages and view-count and ranks them into a list' do
+    hash = {
+      '/about/2' => [3],
+      '/contact' => [1],
+      '/help_page/1' => [10],
+      '/home,' => [5]
+    }
+    expect(rank_page_views(hash)).to eq([
+                                          ['/help_page/1', [10]],
+                                          ['/home,', [5]],
+                                          ['/about/2', [3]],
+                                          ['/contact', [1]]
+                                        ])
+  end
+end
