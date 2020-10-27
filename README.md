@@ -19,7 +19,7 @@ Write a ruby script that:
 
 ## Solution
 
-To run the script pleas enter the command
+To run the script pleas navigate to the folder titled lib and enter the command
 
 ```ruby
 ruby report.rb
