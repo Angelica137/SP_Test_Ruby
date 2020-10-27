@@ -9,3 +9,20 @@ def read_data(list)
   end
   parsed_data
 end
+
+def org_data(data)
+  # groups together pages with the ip addresses that viewed them
+  hash = {}
+  i = 0
+  while i < data.length
+    data.each do |page, ip|
+      if hash.key?(page)
+        hash[page] << ip
+      else
+        hash[page] = [ip]
+      end
+      i += 1
+    end
+  end
+  hash
+end
