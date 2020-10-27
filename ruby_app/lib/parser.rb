@@ -80,3 +80,13 @@ def prep_data_result_2(data)
   count_views = prep_data(data)
   unique_visits(count_views)
 end
+
+
+def format_result_2(hash)
+  # formats  unique vists to display result 2
+  hash.each do |item|
+    views = item[1].to_s
+    puts "#{item[0]} #{views} unique views"
+  end
+  nil
+end

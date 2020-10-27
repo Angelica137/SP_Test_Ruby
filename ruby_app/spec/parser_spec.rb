@@ -169,3 +169,22 @@ describe '#prep_data_result_2' do
                                            ])
   end
 end
+
+describe '#format_results_2' do
+  it 'takes a hash of pages and their unique views and formats the result for user' do
+    data = [
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.038',
+      '/contact 184.123.665.067',
+      '/contact 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.067',
+      '/about/2 444.701.448.104'
+    ]
+    hash = prep_data_result_2(data)
+    expect(format_result_2(hash)).to eq(nil)
+  end
+end
