@@ -146,3 +146,26 @@ describe '#unique_vists' do
                                       ])
   end
 end
+
+describe '#prep_data_result_2' do
+  it 'takes data from log file and prepares it for report' do
+    data = [
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.034',
+      '/help_page/1 126.318.035.035',
+      '/contact 184.123.665.067',
+      '/contact 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.063',
+      '/home 184.123.665.063',
+      '/home 184.123.665.067',
+      '/about/2 444.701.448.104'
+    ]
+    expect(prep_data_result_2(data)).to eq([
+                                             ['/help_page/1', 3],
+                                             ['/home', 2],
+                                             ['/about/2', 1],
+                                             ['/contact', 1]
+                                           ])
+  end
+end

@@ -74,3 +74,9 @@ def unique_visits(hash)
   sort = visits.sort_by { |_k, v| v }
   sort.reverse
 end
+
+def prep_data_result_2(data)
+  # preps data for unique visits requests
+  count_views = prep_data(data)
+  unique_visits(count_views)
+end
