@@ -8,8 +8,3 @@ class UniqueVisitsRequest
     format_result_2(unique_views)
   end
 end
-
-# lines = File.readlines 'webserver.log'
-
-# d = UniqueVisitsRequest.new
-# print(d.print_result_2(lines))
