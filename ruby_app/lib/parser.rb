@@ -63,3 +63,14 @@ def format_result_1(pages)
   end
   nil
 end
+
+def unique_visits(hash)
+  # counts unique visits
+  visits = {}
+  hash.each do |key, value|
+    unique = hash[key].uniq
+    visits[hash.key(value)] = unique.length
+  end
+  sort = visits.sort_by { |_k, v| v }
+  sort.reverse
+end

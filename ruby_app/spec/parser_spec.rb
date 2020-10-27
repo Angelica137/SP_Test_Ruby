@@ -121,3 +121,28 @@ describe '#format_result_1' do
     expect(format_result_1(list)).to eq(nil)
   end
 end
+
+describe '#unique_vists' do
+  it 'takes a hash of pages and ip addresses that visited them and
+	returns a new hash of pages and their unique visitor count' do
+    data = [
+      '/help_page/1 126.318.035.038',
+      '/help_page/1 126.318.035.034',
+      '/help_page/1 126.318.035.035',
+      '/contact 184.123.665.067',
+      '/contact 184.123.665.067',
+      '/home 184.123.665.067',
+      '/home 184.123.665.063',
+      '/home 184.123.665.063',
+      '/home 184.123.665.067',
+      '/about/2 444.701.448.104'
+    ]
+    hash = prep_data(data)
+    expect(unique_visits(hash)).to eq([
+                                        ['/help_page/1', 3],
+                                        ['/home', 2],
+                                        ['/about/2', 1],
+                                        ['/contact', 1]
+                                      ])
+  end
+end
