@@ -32,3 +32,21 @@ describe '#org_data' do
                                  })
   end
 end
+
+describe '#count_page_views' do
+  it 'takes a hash of pages and the ip addressed that viewed them and
+	returns a hash of pages and view count' do
+    hash = {
+      '/about/2' => [['444.701.448.104'], ['444.701.448.104'], ['444.701.448.104']],
+      '/contact' => ['184.123.665.067'],
+      '/help_page/1' => ['126.318.035.038'],
+      '/home,' => ['184.123.665.067']
+    }
+    expect(count_page_views(hash)).to eq({
+                                           '/about/2' => [3],
+                                           '/contact' => [1],
+                                           '/help_page/1' => [1],
+                                           '/home,' => [1]
+                                         })
+  end
+end

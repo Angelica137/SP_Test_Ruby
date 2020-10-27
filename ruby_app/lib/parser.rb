@@ -26,3 +26,12 @@ def org_data(data)
   end
   hash
 end
+
+def count_page_views(hash)
+  # counts how many times a page was viewed
+  view_count = {}
+  hash.each do |key, value|
+    view_count[key] = [value.length]
+  end
+  view_count
+end
